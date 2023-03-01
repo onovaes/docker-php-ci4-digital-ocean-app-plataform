@@ -1,22 +1,20 @@
 
 name: ci4-php8-docker
+
 services:
+- name: php-fpm
+  image:
+    registry_type: DOCR
+    repository: php-fpm
+    tag: latest
+  internal_ports: 
+    - 9000
+
 - name: nginx
   image:
-    registry: library
-    registry_type: DOCKER_HUB
+    registry_type: DOCR
     repository: nginx
-    tag: 1.23.3
+    tag: latest
   http_port: 80
   routes:
   - path: /
-
-
-- name: php-fpm
-  image:
-    registry: library
-    registry_type: DOCKER_HUB
-    repository: php
-    tag: 8.1-fpm
-  internal_ports: 
-    - 9000

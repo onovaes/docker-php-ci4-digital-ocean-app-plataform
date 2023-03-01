@@ -18,5 +18,5 @@ spec:
       registry_type: DOCKER_HUB
       repository: php
       tag: 8.1-fpm
-    internal_ports: 
+    internal_ports:
       - 9000
