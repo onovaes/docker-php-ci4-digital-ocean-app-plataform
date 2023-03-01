@@ -1,0 +1,22 @@
+spec:
+  name: ci4-php8-docker
+  services:
+  - name: nginx
+    image:
+      registry: library
+      registry_type: DOCKER_HUB
+      repository: nginx
+      tag: 1.23.3
+    http_port: 80
+    routes:
+    - path: /
+
+
+  - name: php-fpm
+    image:
+      registry: library
+      registry_type: DOCKER_HUB
+      repository: php
+      tag: 8.1-fpm
+    internal_ports: 
+      - 9000
