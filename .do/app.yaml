@@ -18,5 +18,6 @@ services:
     registry_type: DOCKER_HUB
     repository: php
     tag: 8.1-fpm
+  http_port: 9000
   routes:
   - path: /s
